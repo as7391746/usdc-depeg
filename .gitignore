@@ -1,0 +1,8 @@
+# Regenerate with ./run_all.sh (~400MB)
+data/raw/
+data/processed/
+__pycache__/
+*.aux
+*.log
+*.out
+.DS_Store
