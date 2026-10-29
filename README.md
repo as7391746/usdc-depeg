@@ -26,7 +26,40 @@ USDC during the SVB-induced depeg. Research note: `paper/usdc_depeg.pdf`.
   consistent with large holders having better access to redemption at par,
   but that explanation remains a hypothesis.
 
-## Data (all pulled from the chain via a public RPC, no API keys)
+## Figures
+
+### USDC price and transfer volume
+
+![USDC price and hourly transfer volume](output/figures/fig1_price_volume.png)
+
+Hourly Chainlink USDC/USD price and transfer volume, excluding mints and burns.
+
+### Issuance and redemptions
+
+![Daily USDC mints and burns](output/figures/fig2_mint_burn.png)
+
+Daily USDC mints and burns on Ethereum.
+
+### Flows across venues
+
+![Cumulative net USDC flows into venues](output/figures/fig3_venue_flows.png)
+
+Cumulative net inflows into venues since March 1; exchange wallet labels are unverified.
+
+### Sender concentration
+
+![Share of outgoing volume by largest senders](output/figures/fig4_concentration.png)
+
+Daily outgoing volume accounted for by the largest non-protocol senders.
+
+### Outflow timing by wallet size
+
+![Cumulative net outflow by wallet size and USDC price](output/figures/fig5_timing_by_size.png)
+
+Cumulative net outflows of externally owned accounts during the stress window,
+by wallet size, scaled by each group's aggregate March 10 balance.
+
+## Data
 | Step | Script | Output |
 |---|---|---|
 | USDC `Transfer` logs, 1,423 × 100-block `eth_getLogs` calls | `fetch_transfers.py` | `data/raw/transfers/` |
